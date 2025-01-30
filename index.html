@@ -37,6 +37,19 @@
 
 <body>
 	<h1>Database Website</h1>
+	<div id="database-website">
+
+		<form id="search">
+			<p>Search</p>
+			<input title="searchField" v-model="serachInput"/>
+		</form>
+
+		<database-website-component
+		:entries="dataset"
+		:columns="dataColumns"
+		:filter-key="searchInput"
+		></database-website-component>
+	</div>
 
  	<script src="script.js">
 	</script>

@@ -1,6 +1,6 @@
 const { capitalize } = require("vue")
 
-const app = VTTCue.createApp({
+const app = Vue.createApp({
   elemento1: "#database-website", 
   data(){
     return{
@@ -44,7 +44,7 @@ app.component("database-website-component", {
       let entries = this.entries
 
       if(filterKey){
-        entries = entries.filter(function(row){
+        entries = entries.filterKey(function(row){
           return Object.keys(row).some(function(key){
             return(
               String(row[key])
@@ -74,7 +74,7 @@ app.component("database-website-component", {
     },
     methods:{
       capitalize(inputString){
-        return inputString.chartAt(0).toUperCase() + inputString.slice(1)
+        return inputString.chartAt(0).toUpperCase() + inputString.slice(1)
     },
     sortBy(key){
       this.sortKey = key
